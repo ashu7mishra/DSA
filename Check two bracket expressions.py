@@ -11,8 +11,8 @@ class Solution:
         signB = [True]*26
         self.parse(A,lenA,GlobalA,signA)
         self.parse(B,lenB,GlobalB,signB)
-        print(signA)
-        print(signB)
+        #print(signA)
+        #print(signB)
         for i in range(26):
             if signA[i] != signB[i]:
                 return 0
@@ -24,10 +24,10 @@ class Solution:
                 continue
             elif string[i] == '(':
                 if string[i-1] == '-':
-                    global_sign.append(False and global_sign[-1])
+                    global_sign.append(False == global_sign[-1])
                 else:
-                    global_sign.append(True and global_sign[-1])
-                print(global_sign)
+                    global_sign.append(True == global_sign[-1])
+                #print(global_sign)
             elif string[i] == ')':
                 global_sign.pop()
             else:
@@ -37,7 +37,7 @@ class Solution:
                         local_sign = False
                 index = ord(string[i]) - ord('a')
                 #print(index)
-                sign[index] = global_sign[-1] and local_sign
+                sign[index] = global_sign[-1] == local_sign
 
 obj = Solution()
 A = "-(-(-(-a+b)-d+c)-q)"
